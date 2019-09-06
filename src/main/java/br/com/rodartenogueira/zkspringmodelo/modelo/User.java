@@ -1,4 +1,4 @@
-package br.com.rodartenogueira.modelo;
+package br.com.rodartenogueira.zkspringmodelo.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,11 +10,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "users")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -12,8 +12,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.rodartenogueira.modelo.User;
-import br.com.rodartenogueira.repositorio.UserRepositorio;
+import br.com.rodartenogueira.zkspringmodelo.modelo.User;
+import br.com.rodartenogueira.zkspringmodelo.repositorio.UserRepositorio;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

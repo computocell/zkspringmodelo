@@ -1,4 +1,4 @@
-package br.com.rodartenogueira;
+package br.com.rodartenogueira.zkspringmodelo;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -7,8 +7,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
-import br.com.rodartenogueira.modelo.User;
-import br.com.rodartenogueira.repositorio.UserRepositorio;
+import br.com.rodartenogueira.zkspringmodelo.modelo.User;
+import br.com.rodartenogueira.zkspringmodelo.repositorio.UserRepositorio;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
