@@ -1,4 +1,4 @@
-package br.com.rodartenogueira;
+package br.com.rodartenogueira.zkspringmodelo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
