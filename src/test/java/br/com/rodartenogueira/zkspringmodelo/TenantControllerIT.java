@@ -25,6 +25,9 @@ public class TenantControllerIT {
         Tenant tenant = new Tenant();
         tenant.setSchemaName("TENANT_TEST_POST");
         tenant.setTenantName("testTenantCreation");
+
+//        tenant.setSchemaName("0017");
+//        tenant.setTenantName("0017");
         
         ResponseEntity<Tenant> response = restTemplate.postForEntity("/tenants",tenant,Tenant.class);
        

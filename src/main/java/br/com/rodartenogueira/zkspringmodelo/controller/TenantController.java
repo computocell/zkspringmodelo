@@ -2,7 +2,6 @@ package br.com.rodartenogueira.zkspringmodelo.controller;
 
 import javax.sql.DataSource;
 
-import org.flywaydb.core.Flyway;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -40,11 +39,11 @@ public class TenantController {
         tenant = repository.save(tenant);
         String schema = tenant.getSchemaName();
         if(schema==null) throw new RuntimeException("schema is null");
-        Flyway flyway = new Flyway();
-        flyway.setLocations("db/migration/tenants");
-        flyway.setDataSource(dataSource);
-        flyway.setSchemas(schema);
-        flyway.migrate();
+//        Flyway flyway = new Flyway();
+//        flyway.setLocations("db/migration/tenants");
+//        flyway.setDataSource(dataSource);
+//        flyway.setSchemas(schema);
+//        flyway.migrate();
         return tenant;
     }
 
