@@ -15,11 +15,10 @@
 	<label id="demoLabel"/>
 	
 	
-	
-	
-	
-	<combobox model="@load(vm.lmlUsuarios)">
-	
+	<combobox model="@load(vm.lsPlanos)">
+		<template name="model">
+			<comboitem value="@load(each.nome)" label="@load(each.nome)"/>
+		</template>
 	</combobox>
 	
 	

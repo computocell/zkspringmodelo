@@ -14,6 +14,7 @@ import br.com.rodartenogueira.zkspringmodelo.database.TenantContext;
 import br.com.rodartenogueira.zkspringmodelo.database.repository.TenantRepository;
 
 @Component
+//@VariableResolver(DelegatingVariableResolver.class)
 public class TenantInterceptor extends HandlerInterceptorAdapter {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	{
@@ -25,7 +26,7 @@ public class TenantInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String tenantUuid = request.getHeader("tenant-uuid");
+    	String tenantUuid = request.getHeader("tenant-uuid");
         String tenantSchema = tenantUuid!=null? repository.findById(tenantUuid)
                 .orElseThrow(()->new RuntimeException("Tenant not found"))
                 .getSchemaName() : null;

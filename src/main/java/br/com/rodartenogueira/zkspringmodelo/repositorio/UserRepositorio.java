@@ -1,9 +1,9 @@
 package br.com.rodartenogueira.zkspringmodelo.repositorio;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import br.com.rodartenogueira.zkspringmodelo.modelo.User;
 
-@Repository
-public interface UserRepositorio extends CrudRepository<User, Long>{}
+@EnableJpaRepositories(basePackageClasses = User.class)
+public interface UserRepositorio extends JpaRepository<User, Long>{}
