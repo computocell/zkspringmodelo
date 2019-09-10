@@ -18,21 +18,20 @@ public class FiltroMultiTenancy implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("doFilter() method is invoked");
-		
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 		System.out.println("Context path is  " + httpServletRequest.getContextPath());
 		chain.doFilter(httpServletRequest, httpServletResponse);
 		System.out.println("doFilter() method is ended");
-
+		
 	}
 
 	public void init(FilterConfig config) throws ServletException {
 
-		System.out.println("init() method has been get invoked");
-		System.out.println("Filter name is " + config.getFilterName());
-		System.out.println("ServletContext name is" + config.getServletContext());
-		System.out.println("init() method is ended");
+//		System.out.println("init() method has been get invoked");
+//		System.out.println("Filter name is " + config.getFilterName());
+//		System.out.println("ServletContext name is" + config.getServletContext());
+//		System.out.println("init() method is ended");
 	}
 
 	public void destroy() {

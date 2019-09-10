@@ -1,6 +1,7 @@
 package br.com.rodartenogueira.zkspringmodelo.viewmodel;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,9 @@ import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 import org.zkoss.zul.ListModel;
 
+import br.com.rodartenogueira.zkspringmodelo.database.TenantContext;
 import br.com.rodartenogueira.zkspringmodelo.modelo.User;
+import br.com.rodartenogueira.zkspringmodelo.modelo.plano;
 import br.com.rodartenogueira.zkspringmodelo.repositorio.PlanoRepositorio;
 import lombok.Getter;
 
@@ -34,7 +37,13 @@ public class VmIndex implements Serializable {
 	private ListModel<User> lmlUsuarios;
 
 	@Init
-	public void init() {
+	public void init(@RequestParam(value = "id", required = false) String id) {
+		System.out.println("Oi " + id);
+		TenantContext.setCurrentTenant("0018");
+//		TenantContext.setTenantSchema("0018");
+		
+		List<plano> lsPlanos = (List<plano>) planoRepositorio.findAll();
+//		lsPlanos.size();
 		// Executions.getCurrent().addResponseHeader("X-TenantID",
 		// Executions.getCurrent().getParameter("cod_entidade"));
 		//
